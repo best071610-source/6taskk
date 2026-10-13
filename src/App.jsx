@@ -4,9 +4,9 @@ import './App.css';
 
 function App() {
   const [products, setProducts] = useState([
-    { id: 1, name: 'Круассан', price: 95 },
-    { id: 2, name: 'Кофе латте', price: 160 },
-    { id: 3, name: 'Авокадо', price: 120 },
+    { id: 1, name: 'Сыр Моцарелла', price: 210 },
+    { id: 2, name: 'Оливковое масло', price: 340 },
+    { id: 3, name: 'Свежий базилик', price: 45 },
   ]);
 
   const [nameInput, setNameInput] = useState('');
@@ -34,35 +34,35 @@ function App() {
   const totalPrice = products.reduce((sum, item) => sum + item.price, 0);
 
   return (
-    <div className="app-card">
-      <div className="header-row">
-        <h2 className="main-title">Мои покупки</h2>
-        <span className="count-badge">{products.length} шт.</span>
+    <div className="planner-card">
+      <div className="planner-header">
+        <h2 className="planner-title">Список покупок</h2>
+        <p className="planner-subtitle">Учет планируемых расходов</p>
       </div>
 
-      <form onSubmit={handleAddProduct} className="input-form">
-        <div className="inputs-row">
+      <form onSubmit={handleAddProduct} className="planner-form">
+        <div className="form-inputs">
           <input
             type="text"
-            placeholder="Товар"
+            placeholder="Наименование"
             value={nameInput}
             onChange={(e) => setNameInput(e.target.value)}
-            className="custom-input input-name"
+            className="eco-input"
           />
           <input
             type="number"
-            placeholder="Цена"
+            placeholder="Цена (сом)"
             value={priceInput}
             onChange={(e) => setPriceInput(e.target.value)}
-            className="custom-input input-price"
+            className="eco-input"
           />
         </div>
-        <button type="submit" className="submit-btn">+ Добавить в список</button>
+        <button type="submit" className="eco-submit-btn">Добавить в корзину</button>
       </form>
 
-      <div className="products-wrapper">
+      <div className="items-list">
         {products.length === 0 ? (
-          <p className="empty-state">Список покупок пока пуст</p>
+          <p className="items-empty">Корзина пуста</p>
         ) : (
           products.map(product => (
             <ProductItem 
@@ -74,9 +74,12 @@ function App() {
         )}
       </div>
 
-      <div className="summary-box">
-        <span className="summary-label">Общая сумма:</span>
-        <span className="summary-amount">{totalPrice} сом</span>
+      <div className="stats-footer">
+        <span className="stats-count">Позиций: {products.length}</span>
+        <div className="stats-total-wrap">
+          <span className="stats-total-text">Итого:</span>
+          <span className="stats-total-val">{totalPrice} сом</span>
+        </div>
       </div>
     </div>
   );

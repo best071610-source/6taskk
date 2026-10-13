@@ -1,13 +1,16 @@
 function ProductItem({ item, onDelete }) {
     return (
-        <div className="product-row">
-            <span className="product-title">{item.name}</span>
-            <div className="product-actions">
-                <span className="price-tag">{item.price} сом</span>
+        <div className="item-row">
+            <div className="item-left">
+                <span className="item-dot"></span>
+                <span className="item-label">{item.name}</span>
+            </div>
+            <div className="item-right">
+                <span className="price-pill">{item.price} сом</span>
                 <button
                     onClick={() => onDelete(item.id)}
-                    className="remove-btn"
-                    title="Удалить"
+                    className="delete-action-btn"
+                    title="Удалить позицию"
                 >
                     ✕
                 </button>
