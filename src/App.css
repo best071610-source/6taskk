@@ -1,0 +1,167 @@
+/* Убираем лишние сдвиги, стильный мягкий фон */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f7f6f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  color: #2b2b2b;
+}
+
+/* Главная карточка */
+.shopping-container {
+  width: 100%;
+  max-width: 440px;
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 0 0 24px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.3px;
+}
+
+/* Форма: элементы теперь идут аккуратно друг за другом или на всю ширину, чтобы ничего не ломалось */
+.shopping-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.shopping-input {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #fafafa;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #1a1a1a;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.shopping-input:focus {
+  background-color: #ffffff;
+  border-color: #2b2b2b;
+  box-shadow: 0 0 0 3px rgba(43, 43, 43, 0.05);
+}
+
+.shopping-input::placeholder {
+  color: #8c8c8c;
+}
+
+/* Кнопка добавления на всю ширину формы — теперь точно никуда не улетит */
+.add-btn {
+  width: 100%;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #333333;
+}
+
+/* Список товаров */
+.list-container {
+  max-height: 280px;
+  overflow-y: auto;
+  margin-bottom: 24px;
+  padding-right: 4px;
+}
+
+.empty-text {
+  text-align: center;
+  color: #999999;
+  padding: 24px 0;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Карточка товара */
+.item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  background-color: #fafafa;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.item-card:hover {
+  border-color: #e0e0e0;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.item-price {
+  font-size: 13px;
+  color: #737373;
+}
+
+/* Кнопка удаления в минималистичном стиле */
+.delete-btn {
+  background-color: transparent;
+  color: #8c8c8c;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #f0f0f0;
+  color: #d32f2f;
+}
+
+/* Блок итогов */
+.total-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+
+.total-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #737373;
+}
+
+.total-sum {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
